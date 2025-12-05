@@ -1,0 +1,14 @@
+# Exclude from npm package
+node_modules/
+.git/
+.github/
+*.log
+*.lock
+yarn.lock
+pnpm-lock.yaml
+
+# Keep only essential files (defined in package.json files field)
+design-system/
+src/app/
+src/components/
+src/pages/

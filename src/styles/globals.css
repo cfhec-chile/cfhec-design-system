@@ -1,0 +1,297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CFHEC Chile Design System - CSS Variables
+   Based on CCCC Corporate Identity
+   ============================================ */
+
+@layer base {
+  :root {
+    /* ==========================================
+       Layout Constants
+       ========================================== */
+    --navbar-height: 64px;
+    --sidebar-width: 260px;
+    --sidebar-collapsed: 72px;
+    --container-max: 1280px;
+    --container-wide: 1440px;
+    --content-max: 960px;
+
+    /* ==========================================
+       Colors - Light Mode
+       All values in HSL format for Tailwind
+       ========================================== */
+
+    /* Background & Surfaces */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 215 25% 27%;
+
+    /* Primary - CCCC Blue (#0D4F8B) */
+    --primary: 209 83% 30%;
+    --primary-light: 210 50% 40%;
+    --primary-dark: 210 100% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Semantic - Destructive/Error */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Semantic - Success */
+    --success: 160 84% 39%;
+    --success-light: 152 76% 91%;
+    --success-foreground: 0 0% 100%;
+
+    /* Semantic - Warning */
+    --warning: 38 92% 50%;
+    --warning-light: 48 96% 89%;
+    --warning-foreground: 0 0% 0%;
+
+    /* Semantic - Info */
+    --info: 217 91% 60%;
+    --info-light: 214 95% 93%;
+    --info-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 209 83% 30%;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* Sidebar - Uses Primary Blue */
+    --sidebar-bg: 209 83% 30%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-accent: 209 83% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 209 83% 25%;
+
+    /* Navbar */
+    --navbar-bg: 0 0% 100%;
+    --navbar-foreground: 215 25% 27%;
+    --navbar-border: 214 32% 91%;
+
+    /* Overlay */
+    --overlay: 0 0% 0% / 0.5;
+  }
+
+  /* ==========================================
+     Dark Mode
+     ========================================== */
+  .dark {
+    /* Background & Surfaces */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 215 28% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 215 16% 56.9%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Primary - Lighter for dark mode */
+    --primary: 209 83% 45%;
+    --primary-light: 210 50% 55%;
+    --primary-dark: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 215 19% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Semantic - Destructive/Error */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Semantic - Success */
+    --success: 160 84% 39%;
+    --success-light: 160 40% 20%;
+    --success-foreground: 0 0% 100%;
+
+    /* Semantic - Warning */
+    --warning: 38 92% 50%;
+    --warning-light: 38 40% 20%;
+    --warning-foreground: 0 0% 0%;
+
+    /* Semantic - Info */
+    --info: 217 91% 60%;
+    --info-light: 217 40% 20%;
+    --info-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 215 28% 24%;
+    --input: 215 28% 24%;
+    --ring: 209 83% 45%;
+
+    /* Sidebar - Darker blue */
+    --sidebar-bg: 210 100% 18%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 100% 22%;
+
+    /* Navbar */
+    --navbar-bg: 215 28% 17%;
+    --navbar-foreground: 210 40% 98%;
+    --navbar-border: 215 28% 24%;
+
+    /* Overlay */
+    --overlay: 0 0% 0% / 0.7;
+  }
+
+  /* ==========================================
+     Base Styles
+     ========================================== */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+}
+
+/* ============================================
+   Component Layer - Utility Classes
+   ============================================ */
+
+@layer components {
+  /* Page container */
+  .page-container {
+    @apply max-w-container mx-auto px-6;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-card text-card-foreground rounded-lg border shadow-low;
+  }
+
+  /* KPI metric display */
+  .kpi-metric {
+    @apply text-metric tabular-nums tracking-tight;
+  }
+
+  /* Trend indicators */
+  .trend-up {
+    @apply text-success;
+  }
+
+  .trend-down {
+    @apply text-destructive;
+  }
+
+  /* Section label (overline style) */
+  .section-label {
+    @apply text-overline uppercase tracking-wider text-muted-foreground;
+  }
+
+  /* Sidebar navigation item */
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors;
+    @apply text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-sidebar-accent text-sidebar-accent-foreground;
+  }
+
+  /* Page header */
+  .page-header {
+    @apply mb-8 space-y-2;
+  }
+
+  .page-header h1 {
+    @apply text-display-lg text-foreground;
+  }
+
+  .page-header p {
+    @apply text-lg text-muted-foreground;
+  }
+}
+
+/* ============================================
+   Utility Layer - Custom Utilities
+   ============================================ */
+
+@layer utilities {
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  /* No scrollbar */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tabular numbers for data */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Glass effect for overlays */
+  .glass {
+    @apply bg-background/80 backdrop-blur-sm;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+}
