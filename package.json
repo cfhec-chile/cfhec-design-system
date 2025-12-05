@@ -1,6 +1,6 @@
 {
   "name": "@cfhec-chile/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CFHEC Chile Design System - Shared Tailwind configuration and styles for internal platform services",
   "main": "index.js",
   "types": "index.d.ts",
