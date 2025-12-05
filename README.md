@@ -4,11 +4,12 @@
 
 ## Overview
 
-This package provides a centralized design system built on Tailwind CSS v4, ensuring visual consistency across all CFHEC platform services. It includes:
+This package provides a centralizeddesign system built on Tailwind CSS v4, ensuring visual consistency across all CFHEC platform services. It includes:
 
 - **Design Tokens**: Colors, typography, spacing, and other foundational variables
 - **Tailwind Configuration**: Pre-configured Tailwind setup with CFHEC branding
 - **Global Styles**: CSS utilities and component base styles
+- **React Components**: Pre-built, fully typed UI components (Button, Card, Input)
 - **Dark Mode Support**: Fully themed dark mode
 
 ## Installation
@@ -84,7 +85,82 @@ import '@cfhec/design-system/styles';
 
 // Direct Tailwind config import (alternative)
 import tailwindConfig from '@cfhec/design-system/tailwind';
+
+// React components
+import { Button, Card, Input } from '@cfhec/design-system/components';
 ```
+
+## React Components
+
+The design system includes fully typed, accessible React components built with Tailwind CSS.
+
+### Button
+
+Flexible button component with multiple variants and sizes:
+
+```tsx
+import { Button } from '@cfhec/design-system/components';
+
+// Variants: primary, secondary, outline, ghost, link, destructive
+<Button variant="primary" size="lg">Get Started</Button>
+<Button variant="outline" size="md">Learn More</Button>
+<Button variant="destructive" size="sm">Delete</Button>
+```
+
+**Props:**
+- `variant`: `'primary'` | `'secondary'` | `'outline'` | `'ghost'` | `'link'` | `'destructive'`
+- `size`: `'sm'` | `'md'` | `'lg'` | `'icon'`
+- All standard button HTML attributes
+
+### Card
+
+Composable card component with header, content, and footer sections:
+
+```tsx
+import { Card } from '@cfhec/design-system/components';
+
+<Card>
+  <Card.Header>
+    <h3>Revenue Overview</h3>
+    <p>Last 30 days</p>
+  </Card.Header>
+  <Card.Content>
+    <div className="kpi-metric">$1,234,567</div>
+  </Card.Content>
+  <Card.Footer>
+    <Button variant="outline">View Details</Button>
+  </Card.Footer>
+</Card>
+```
+
+**Sub-components:**
+- `Card.Header`: Card header section
+- `Card.Content`: Main card content
+- `Card.Footer`: Card footer section
+
+### Input
+
+Text input with error state support:
+
+```tsx
+import { Input } from '@cfhec/design-system/components';
+
+<Input 
+  placeholder="Enter your email"
+  type="email"
+/>
+
+// With error state
+<Input 
+  placeholder="Enter your email"
+  error="Please enter a valid email address"
+  type="email"
+/>
+```
+
+**Props:**
+- `error`: Optional error message string
+- All standard input HTML attributes
 
 ## Design Tokens
 
