@@ -28,13 +28,19 @@ Replace `YOUR_GITHUB_TOKEN` with a [GitHub Personal Access Token](https://github
 ### 2. Install the Package
 
 ```bash
-npm install @cfhec/design-system
+npm install @cfhec-chile/design-system
 ```
 
 Or with yarn:
 
 ```bash
-yarn add @cfhec/design-system
+yarn add @cfhec-chile/design-system
+```
+
+Or with bun:
+
+```bash
+bun add @cfhec-chile/design-system
 ```
 
 ## Usage
@@ -47,7 +53,7 @@ In your `tailwind.config.ts`:
 
 ```typescript
 import type { Config } from 'tailwindcss';
-import baseConfig from '@cfhec/design-system';
+import baseConfig from '@cfhec-chile/design-system';
 
 const config: Config = {
   ...baseConfig,
@@ -65,29 +71,29 @@ export default config;
 In your root layout or `_app.tsx`:
 
 ```typescript
-import '@cfhec/design-system/styles';
+import '@cfhec-chile/design-system/styles';
 ```
 
 Or in your main CSS file:
 
 ```css
-@import '@cfhec/design-system/styles';
+@import '@cfhec-chile/design-system/styles';
 ```
 
 ### Available Imports
 
 ```typescript
 // Tailwind config preset
-import config from '@cfhec/design-system';
+import config from '@cfhec-chile/design-system';
 
 // Global CSS with design tokens
-import '@cfhec/design-system/styles';
+import '@cfhec-chile/design-system/styles';
 
 // Direct Tailwind config import (alternative)
-import tailwindConfig from '@cfhec/design-system/tailwind';
+import tailwindConfig from '@cfhec-chile/design-system/tailwind';
 
 // React components
-import { Button, Card, Input } from '@cfhec/design-system/components';
+import { Button, Card, Input } from '@cfhec-chile/design-system/components';
 ```
 
 ## React Components
@@ -99,7 +105,7 @@ The design system includes fully typed, accessible React components built with T
 Flexible button component with multiple variants and sizes:
 
 ```tsx
-import { Button } from '@cfhec/design-system/components';
+import { Button } from '@cfhec-chile/design-system/components';
 
 // Variants: primary, secondary, outline, ghost, link, destructive
 <Button variant="primary" size="lg">Get Started</Button>
@@ -117,7 +123,7 @@ import { Button } from '@cfhec/design-system/components';
 Composable card component with header, content, and footer sections:
 
 ```tsx
-import { Card } from '@cfhec/design-system/components';
+import { Card } from '@cfhec-chile/design-system/components';
 
 <Card>
   <Card.Header>
@@ -143,7 +149,7 @@ import { Card } from '@cfhec/design-system/components';
 Text input with error state support:
 
 ```tsx
-import { Input } from '@cfhec/design-system/components';
+import { Input } from '@cfhec-chile/design-system/components';
 
 <Input 
   placeholder="Enter your email"
@@ -202,7 +208,7 @@ Pre-built component utilities:
 ## Example
 
 ```tsx
-import '@cfhec/design-system/styles';
+import '@cfhec-chile/design-system/styles';
 
 export default function Dashboard() {
   return (
